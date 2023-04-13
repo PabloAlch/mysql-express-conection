@@ -8,21 +8,18 @@ require("./config/db.config");
 
 const express = require("express");
 const app = express();
-const port = 3306;
+const port = 3000;
 app.use(express.json());
 app.use(
   express.urlencoded({
     extended: true,
   })
 );
-app.get("/", (req, res) => {
-  res.json({ message: "ok" });
-});
+const routes = require("./config/routes.config");
+app.use("/", routes);
+
+
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
-
-
-
-///
-

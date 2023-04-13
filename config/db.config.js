@@ -1,7 +1,7 @@
 
 
-let mysql = require('mysql');
-let conexion= mysql.createConnection({
+const mysql = require('mysql');
+let conexion = mysql.createConnection({
     host : 'hd-europe2712.banahosting.com',
     database : 'ayavlgeb_mensajeria',
     user : 'ayavlgeb_root',
@@ -28,8 +28,11 @@ conexion.query('SELECT * FROM usuarios where id = 1', function (error, results, 
 });
 
 
-
 conexion.end();
+
+
+module.export = {conexion}
+
 //Cambiar2006
 
 
